@@ -40,18 +40,18 @@ class GoogleAPIService:
                 if not getattr(settings, field, None):
                     raise ValueError(f'Отсутствует обязательное поле: {field}')
             creds_dict = {
-                'type': settings.type,
-                'project_id': settings.project_id,
-                'private_key_id': settings.private_key_id,
-                'private_key': settings.private_key.replace('\\n', '\n'),
-                'client_email': settings.client_email,
-                'client_id': settings.client_id,
-                'auth_uri': settings.auth_uri,
-                'token_uri': settings.token_uri,
+                "type": "service_account",
+                "project_id": "qrkot-477119",
+                "private_key_id": "6512ffee0d4a7f743fdf5a660ac0be7600f68b1b",
+                "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDddOwOVjDkTsQX\n70FuNIuReh99fkWQ13nJzB8cipuChYgTg5Fny3mSirmQ+GiwLTCADDoXizXnceqs\nuC0UArhpuP/+AUhgUdr63a4HxxPwYLsp/3xFp+04zqk1dNrIrVFItTXzy6AlMLww\nOPki7qTwuafp3ooACJl68NCP+u/dkWsmO6Qhfn7Iqdk9AXa83bjpaLx/GQNGj+yJ\nh0010A/GwmmUFG9eWmTK5avsQ9Qk6cZIIompPI7/dnY7cuCUtAfLAFyIJ+hcfmNc\nm3ZFvp3lA8d2Ia/NTvrLbinz2rNMKXu0izPElhfbmBrysoWIR+ubvJM917mDx2Ej\ne6C7HkANAgMBAAECggEAG2M/YlKEf2fCVpdvRxrWe+pXhKSeI9iSJkPJQTVfIBg1\niPxHekeuxFHFu0kNYWRlUCCy+oBr7TCobi3k3Ums1t5bQmWUNt1IsKfDwxB6xcqg\nuwPusYqgCtt8D7Fg8VqF5/EJOBphtte9HlWdchWDboX3XzP3ayOlH5AyquvEyGjd\nqkvFqPi88wzdst6fEWGYxihQBxXEr1sIqHszqi4tKRll9+Fu0nQqq4vXJG6JYeHJ\nr90kWpc1R01UrBLOktzCAQe8IsqINE2pW3zn4I8R6fABTSgacqFfLvMsSEnoZJsd\n+IUFq5FIfoqLAmKpNpYbHVw0ODvCYuQdQMFnYZxqwQKBgQDxcTSEEimT6kpo+ILL\n+z77bXQo1FDl877u6A23OdRmJSH076h0hsuYUy78J1jPqAXr3P9k/5OhssuHgx+k\n48m7ftfcjsEQlaA4lBy/aqzXXROLdanGMWfPLNHMRbuwwjnpQtKNOg1H+VDFMU3s\ng1379ZoyqImONdA3kuxgdsiW0QKBgQDqzzrdE0Rurm6TbjWEYUN0Dkm5rvUZd1aI\nlyajTSGN7BZs1PS4/W3Z5ofjBhbE7LqNlQZkwg7DNijdTb2fw6KKRlrPbTRWgLiH\nKnb23WB4tEl0qTd1ink6M67N86qQf8fh7LcYzHRn6QFTAoA/Z0rZhkEnnvCHxCRz\nirojxsHcfQKBgQCL3nb748GubNX6hazQGpbb9QaL+KN8832yzT/U222OVwia6pN+\nHfCoJ9haPzkV41K61uYlTmHqFLgPowib71IYilzm6tQxlVyiKjuVMGk8wjDmY52c\nsVZgEKjhW6xls770wL9VDUJQZcBC3FM2Jsw1gIx5uGUnu0kKSNUi9O0zYQKBgFxE\n7JOdE6IOp2MFxr/rXI9JYg02RBgqvfVUuBkpoQrc//7qO/RJmhYrMbCzXtUpVTF3\noxiK7TQmny4/c0lJniCJ/vtNpWhskpaCyFa/rT4hUlAmgqWMsZB+aK2Dl73KiKgt\n1dFH3mJKvHt7GxxPIamSyR2hplEjcVN56yVN4DYdAoGABIfE67SqJ9lRC/5MkAb+\na3Tp87D5h5MvzgrWklG9/30XAtrqy7jTLbFOKtAeuLriHK2S33OeJ6xHjaBXuyDL\n0FbnrMNVYSGn/chCpE+T04LDebduFUhiUz4bDRKUVCqNR/V+jKujHuh+zse17cUE\nmK4alCn2MfGSQ33sxPsrSz8=\n-----END PRIVATE KEY-----\n",  # noqa
+                'client_email': "qrkot-service-account@qrkot-477119.iam.gserviceaccount.com",  # noqa
+                'client_id': "111680164008296313353",
+                'auth_uri': "https://accounts.google.com/o/oauth2/auth",
+                'token_uri': "https://oauth2.googleapis.com/token",
                 'auth_provider_x509_cert_url': (
-                    settings.auth_provider_x509_cert_url
+                    "https://www.googleapis.com/oauth2/v1/certs",
                 ),
-                'client_x509_cert_url': settings.client_x509_cert_url,
+                'client_x509_cert_url': "https://www.googleapis.com/robot/v1/metadata/x509/qrkot-service-account%40qrkot-477119.iam.gserviceaccount.com",  # noqa
             }
             logger.info('Credentials созданы, аутентификация...')
             SCOPES = [
