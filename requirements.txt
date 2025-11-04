@@ -81,4 +81,5 @@ watchgod==0.8.2
 websockets==10.3
 yarl==1.7.2; python_version >= '3.6'
 
-gspread==3.7.0
+google-api-python-client==2.86.0
+gspread==5.8.0
