@@ -80,3 +80,5 @@ uvicorn[standard]==0.17.6
 watchgod==0.8.2
 websockets==10.3
 yarl==1.7.2; python_version >= '3.6'
+
+gspread==3.7.0
