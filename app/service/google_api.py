@@ -9,6 +9,7 @@ from typing import Optional
 from app.core.config import settings
 from app.schemas.charity_project import CharityProjectReport
 from app.service.constants import (
+    BASE_SCOPE,
     SPREADSHEET_HEADERS,
     SPREADSHEET_COLUMN_COUNT,
     SPREADSHEET_HEADER_RANGE,
@@ -55,8 +56,8 @@ class GoogleAPIService:
             }
             logger.info('Credentials созданы, аутентификация...')
             SCOPES = [
-                'https://www.googleapis.com/auth/spreadsheets',
-                'https://www.googleapis.com/auth/drive.file'
+                f'{BASE_SCOPE}spreadsheets',
+                f'{BASE_SCOPE}drive.file'
             ]
             creds = Credentials.from_service_account_info(creds_dict)
             creds = creds.with_scopes(SCOPES)

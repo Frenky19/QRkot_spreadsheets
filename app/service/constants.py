@@ -61,6 +61,7 @@ SPREADSHEET_HEADER_BACKGROUND = {
     'green': 0.9,
     'blue': 0.9
 }
+BASE_SCOPE = 'https://www.googleapis.com/auth/'
 
 # Форматирование времени
 SECONDS_IN_HOUR = 3600

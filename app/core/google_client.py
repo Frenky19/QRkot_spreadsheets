@@ -4,11 +4,12 @@ import gspread
 from google.oauth2.service_account import Credentials
 
 from app.core.config import settings
-
+from app.service.constants import BASE_SCOPE
+from app.service.exceptions import GoogleSheetsServiceError
 
 SCOPES = [
-    'https://www.googleapis.com/auth/spreadsheets',
-    'https://www.googleapis.com/auth/drive.file'
+    f'{BASE_SCOPE}spreadsheets',
+    f'{BASE_SCOPE}drive.file'
 ]
 INFO = {
     'type': settings.type,
@@ -34,7 +35,9 @@ async def get_service():
         client = gspread.authorize(creds)
         yield client
     except Exception as e:
-        raise Exception(f'Ошибка создания Google сервиса: {str(e)}')
+        raise GoogleSheetsServiceError(
+            f'Ошибка создания Google сервиса: {str(e)}'
+        )
 
 
 google_client = get_service()
