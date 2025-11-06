@@ -132,5 +132,5 @@ dmypy.json
 .idea
 
 # daataabase
-# fastapi.db
+fastapi.db
 test.db
